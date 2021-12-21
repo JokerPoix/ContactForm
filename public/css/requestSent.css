@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Bevan&family=Monoton&display=swap");
+/* Coffee Mug recreated in CSS from Bogdan Despic's Dribbble - https://dribbble.com/shots/7077701-good-morning-coffee */
+ * {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+}
+ body {
+	 position: relative;
+	 width: 100vw;
+	 max-width: 60rem;
+	 height: 100vh;
+	 margin: auto;
+	 padding: 3rem;
+	 overflow: hidden;
+	 background: linear-gradient(to bottom right, #eef0da, #bededd);
+	 display: flex;
+	 flex-flow: column nowrap;
+	 align-items: center;
+	 align-content: center;
+	 justify-content: center;
+}
+ .shadow {
+	 position: absolute;
+	 width: 80rem;
+	 height: 29.9rem;
+	 top: 32rem;
+	 left: 3.45rem;
+	 background: #98b0b0;
+	 z-index: -2;
+	 transform-origin: 50% 50%;
+	 transform: rotate(45deg);
+}
+ .shadow:before {
+	 content: "";
+	 position: absolute;
+	 width: 8rem;
+	 height: 3rem;
+	 top: -6rem;
+	 right: 66.3rem;
+	 background: transparent;
+	 border-radius: 0 3rem 0 0;
+	 border: 2.25rem solid #98b0b0;
+	 z-index: -2;
+}
+ .coffee {
+	 position: relative;
+	 width: 100%;
+	 height: 100%;
+	 z-index: -1;
+}
+ .coffee__saucer {
+	 position: absolute;
+	 width: 35rem;
+	 height: 35rem;
+	 top: 0rem;
+	 left: 0rem;
+	 border-radius: 50%;
+	 background: #f4d2a2;
+	 z-index: -1;
+	 overflow: hidden;
+	 box-shadow: inset #fae6ce 0.5rem 0.5rem;
+}
+ .coffee__saucer__shadow {
+	 position: absolute;
+	 width: 25rem;
+	 height: 25rem;
+	 top: 13rem;
+	 left: 13rem;
+	 background: #c1a784;
+	 z-index: -2;
+	 transform-origin: 50% 50%;
+	 transform: rotate(45deg);
+}
+ .coffee__saucer__shadow:before {
+	 content: "";
+	 position: absolute;
+	 width: 8rem;
+	 height: 3rem;
+	 top: -6rem;
+	 right: 11rem;
+	 background: #f4d2a2;
+	 border-radius: 0 3rem 3rem 3rem;
+	 border: 2.25rem solid #c1a784;
+	 z-index: -2;
+}
+ .coffee__mug {
+	 position: absolute;
+	 top: 5rem;
+	 left: 5rem;
+	 width: 25rem;
+	 height: 25rem;
+	 border-radius: 50%;
+	 background: #f2e1cd;
+	 box-shadow: inset #fdfdfb 0.5rem 0.5rem;
+}
+ .coffee__mug__drink {
+	 position: absolute;
+	 top: 2.5rem;
+	 left: 2.5rem;
+	 width: 20rem;
+	 height: 20rem;
+	 border-radius: 50%;
+	 background: #664939;
+	 box-shadow: inset rgba(102, 73, 57, 0.5) 0.5rem 0.5rem, inset #dda982 2.5rem 2.5rem, inset #fdfdfb -0.5rem -0.5rem, inset #dda982 0.5rem -0.5rem, inset #dda982 -0.75rem -0.75rem, inset #dda982 -0.5rem 0.5rem;
+}
+ .coffee__mug__drink:after {
+	 content: "";
+	 position: absolute;
+	 width: 20rem;
+	 height: 20rem;
+	 border-radius: 50%;
+	 background: radial-gradient(circle at 4rem 5rem, #664939, #664939 0.5rem, transparent 0.6rem, transparent), radial-gradient(circle at 6rem 3rem, #664939, #664939 0.25rem, transparent 0.3rem, transparent), radial-gradient(circle at 7rem 3.5rem, #664939, #664939 0.25rem, transparent 0.3rem, transparent), radial-gradient(circle at 12rem 1.5rem, #664939, #664939 0.3rem, transparent 0.4rem, transparent), radial-gradient(circle at 9rem 2rem, #664939, #664939 0.15rem, transparent 0.2rem, transparent), radial-gradient(circle at 7.5rem 1rem, #664939, #664939 0.15rem, transparent 0.2rem, transparent), radial-gradient(circle at 6rem 4rem, #664939, #664939 0.3rem, transparent 0.4rem, transparent), radial-gradient(circle at 14rem 2rem, #664939, #664939 0.25rem, transparent 0.3rem, transparent), radial-gradient(circle at 13rem 2rem, #664939, #664939 0.15rem, transparent 0.2rem, transparent), radial-gradient(circle at 2rem 6rem, #664939, #664939 0.2rem, transparent 0.3rem, transparent), radial-gradient(circle at 2.5rem 7rem, #664939, #664939 0.15rem, transparent 0.2rem, transparent), radial-gradient(circle at 1.5rem 6.5rem, #664939, #664939 0.15rem, transparent 0.2rem, transparent);
+	 animation: bubbles 6s linear infinite;
+}
+ @keyframes bubbles {
+	 50% {
+		 transform: rotate(1deg);
+	}
+}
+ .coffee__mug__handle {
+	 position: absolute;
+	 width: 2.25rem;
+	 height: 6.5rem;
+	 top: 3rem;
+	 left: 27rem;
+	 border-radius: 0.25rem;
+	 transform: rotate(45deg);
+	 background: #f2e1cd;
+	 z-index: 1;
+	 box-shadow: -0.35rem 0 #fdfdfb;
+}
+ .text {
+	 position: absolute;
+	 top: 12.5rem;
+	 left: 6.5rem;
+}
+ p {
+	 font-family: "Monoton", sans-serif;
+	 font-size: 4rem;
+	 line-height: 3.5rem;
+	 color: #f46a55;
+	 text-align: center;
+	 animation: float 5s ease-in-out infinite;
+}
+ p:last-of-type {
+	 padding-top: 1rem;
+	 font-family: "Bevan", sans-serif;
+	 font-size: 4rem;
+	 line-height: 1.5rem;
+	 color: #98b0b0;
+	 transform: rotate(-2deg);
+}
+ @keyframes float {
+	 50% {
+		 transform: rotate(-1deg) scale(1.005);
+	}
+}
+ .first:before {
+	 content: "REQUEST";
+	 position: absolute;
+	 z-index: -1;
+	 font-family: "Monoton", sans-serif;
+	 font-size: 4rem;
+	 line-height: 3.5rem;
+	 -webkit-text-stroke: 0.25rem #eef0da;
+	 text-shadow: 0.1rem 0.1rem #453227, 0.2rem 0.2rem #453227, 0.3rem 0.3rem #453227, 0.4rem 0.4rem #453227, 0.5rem 0.5rem #453227;
+}
+ .second:before {
+	 content: "Sent";
+	 position: absolute;
+	 z-index: -1;
+	 font-family: "Monoton", sans-serif;
+	 font-size: 4rem;
+	 line-height: 3.5rem;
+	 -webkit-text-stroke: 0.25rem #eef0da;
+	 text-shadow: 0.1rem 0.1rem #453227, 0.2rem 0.2rem #453227, 0.3rem 0.3rem #453227, 0.4rem 0.4rem #453227, 0.5rem 0.5rem #453227;
+}
+ .third:before {
+	 content: "Boss";
+	 position: absolute;
+	 z-index: -1;
+	 font-family: "Bevan", sans-serif;
+	 font-size: 4rem;
+	 line-height: 1.5rem;
+	 -webkit-text-stroke: 0.5rem #fdfdfb;
+	 text-shadow: 0.1rem 0.1rem #f46a55, 0.2rem 0.2rem #f46a55, 0.3rem 0.3rem #f46a55, 0.4rem 0.4rem #f46a55, 0.5rem 0.5rem #f46a55;
+}
+ @media (max-width: 800px) {
+	 body {
+		 height: 130vh;
+		 transform: scale(0.55);
+		 margin: -3rem;
+		 padding: 0;
+	}
+}
+ 

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire Requête{% endblock %}
+
+{% block body %}
+<style>
+    
+</style>
+
+<div class="example-wrapper">
+    <h1>Requête</h1>
+{# {{ form(formView)}} #}
+    
+<div class="row">   
+    {{ form_start(formView)}}
+    {{ form_errors(formView)}}
+    <div class="col">
+        <div>
+            {{ form_label(formView.applicant.mail)}}
+            {{ form_errors(formView.applicant.mail)}}
+            {{ form_widget(formView.applicant.mail)}}
+            {{ form_help(formView.applicant.mail)}}
+        </div>
+        <div>
+            {{ form_label(formView.name)}}
+            {{ form_errors(formView.name)}}
+            {{ form_widget(formView.name)}}
+            {{ form_help(formView.name)}}
+        </div>
+    </div>
+    <div class="col">
+        <div>
+            
+            {{ form_label(formView.question)}}
+            {{ form_errors(formView.question)}}
+            {{ form_widget(formView.question)}}
+            {{ form_help(formView.question)}}
+        </div>
+        <div>
+            {{ form_label(formView.additionnalInformations)}}
+            {{ form_errors(formView.additionnalInformations)}}
+            {{ form_widget(formView.additionnalInformations)}}
+            {{ form_help(formView.additionnalInformations)}}
+        </div>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"> Envoyer votre requête</i>
+    </button>
+    {{ form_end(formView)}}
+
+</div>
+{% endblock %}
