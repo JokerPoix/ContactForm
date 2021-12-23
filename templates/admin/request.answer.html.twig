@@ -6,26 +6,31 @@
         <div >
             <div class="box">
                 <div class="info_request">
-                    {{ request.applicant.mail }}
+                    {{ "Mail :\n"|nl2br }} {{ request.applicant.mail }}
                 </div>
             </div>
             <div class="box">                            
                 <div class="info_request">
-                    {{ request.name }}
+                    {{ "Nom :\n"|nl2br }}{{ request.name }}
                 </div>
             </div>
             <div class="box">                            
                 <div class="info_request">
-                    {{ request.question }}
+                    {{ "Demande :\n"|nl2br }} {{ request.question }}
                 </div>
             </div>
             <div class="box">                            
                 <div class="info_request">
-                    {{ request.additionnalInformations }}
+                    {{ "Informations Complémentaire :\n"|nl2br }}{{ request.additionnalInformations }}
                 </div>
             </div>
-            {# <div>{% if request.updatedAt == null %}{{ request.createdAt }} {% else %}{{request.updatedAt}} {% endif %}</div> #}
-            <div class="box">
+            <div>
+                <div class="box">                            
+                    <div class="info_request">
+                        {{ "Dernière Mise à Jour :\n"|nl2br }} {% if request.updatedAt == null %}{{ request.createdAt|date("m/d/Y") }} {% else %}{{request.updatedAt|date("m/d/Y")}} {% endif %}
+                    </div>
+                </div>
+            <div class="box button_box">
                 {% if request.answered == 1 %}
                 <button class="info_answer_button"><a class="info_answer_button arrow" style="width:100%; height:100%;" href="{{ path ('admin_unanswered', {'id': request.id }) }}">Passer à "non répondu"</a></button> 
                 {% else %}

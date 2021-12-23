@@ -46,11 +46,13 @@ class AdminController extends AbstractController
         }
 
         $requestToAnswer = $request->findOneBy(['id'=> $id]);
-        $requestToAnswer->setAnswered(true);
+        $requestToAnswer->setAnswered(true)
+                        ->setUpdatedAt(new \DateTimeImmutable());
         $applicant = $requestToAnswer->getApplicant();
         if ($requestToAnswer->getAnswered() == true){
             $applicant = $applicant->setNonAnswered($applicant->getNonAnswered()-1) ;
-        }        $em->persist($requestToAnswer);
+        }        
+        $em->persist($requestToAnswer);
         $em->persist($applicant);
         $em->flush();
 
@@ -67,7 +69,8 @@ class AdminController extends AbstractController
         }
 
         $requestToAnswer = $request->findOneBy(['id'=> $id]);
-        $requestToAnswer->setAnswered(false);
+        $requestToAnswer->setAnswered(false)
+                        ->setUpdatedAt(new \DateTimeImmutable());
         $applicant = $requestToAnswer->getApplicant();
         if ($requestToAnswer->getAnswered() == false){
             $applicant = $applicant->setNonAnswered($applicant->getNonAnswered()+1) ;

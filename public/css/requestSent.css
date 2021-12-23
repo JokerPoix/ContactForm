@@ -194,4 +194,16 @@
 		 padding: 0;
 	}
 }
- 
+.button_container{
+	display:  flex;
+	
+}
+a{
+	
+	flex: 1
+	
+} 
+
+a>button{
+	width: 100%;
+}

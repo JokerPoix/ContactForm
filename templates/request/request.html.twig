@@ -4,55 +4,80 @@
 
 {% block body %}
 {{ parent()}}
-<div >
-    <h1>Requête</h1>
-{# {{ form(formView)}} #}
+<div>
     
-<div class="row">   
-    {{ form_start(formView)}}
-    {{ form_errors(formView)}}
-    <div class="col">
-        <div>
-            {{ form_label(formView.title)}}
-            {{ form_errors(formView.title)}}
-            {{ form_widget(formView.title)}}
-            {{ form_help(formView.title)}}
+    {# {{ form(formView)}} #}
+        
+    <div class="formRequest">   
+        {{ form_start(formView)}}
+        {{ form_errors(formView)}}
+        <h1>Contactez nous!</h1>
+        <div class="rowR">
+            <div class="fieldContainer">
+                <div class="field">
+                {{ form_label(formView.title)}}
+                {{ form_errors(formView.title)}}
+                </div>
+                <div class="field">
+                {{ form_widget(formView.title)}}
+                {{ form_help(formView.title)}}
+                </div>
+            </div>
         </div>
-        <div>
-            {{ form_label(formView.applicant.mail)}}
-            {{ form_errors(formView.applicant.mail)}}
-            {{ form_widget(formView.applicant.mail)}}
-            {{ form_help(formView.applicant.mail)}}
+        <div class="rowR">
+            <div class="halfFieldContainer">
+                <div class="halfField">
+                    {{ form_label(formView.applicant.mail)}}
+                    {{ form_errors(formView.applicant.mail)}}
+                </div>
+                <div class="halfField">
+                    {{ form_widget(formView.applicant.mail)}}
+                    {{ form_help(formView.applicant.mail)}}
+                </div>
+            </div>
+            <div style="width:1%"></div>
+            <div class="halfFieldContainer">
+                <div class="halfField">
+                    {{ form_label(formView.name)}}
+                    {{ form_errors(formView.name)}}
+                </div>
+                <div class="halfField">
+                    {{ form_widget(formView.name)}}
+                    {{ form_help(formView.name)}}
+                </div>
+            </div>
         </div>
-        <div>
-            {{ form_label(formView.name)}}
-            {{ form_errors(formView.name)}}
-            {{ form_widget(formView.name)}}
-            {{ form_help(formView.name)}}
+        <div class="rowR">
+            <div class="fieldContainer">
+                <div class="field">
+                    {{ form_label(formView.question)}}
+                    {{ form_errors(formView.question)}}
+                </div>
+                <div class="field bigInput">
+                    {{ form_widget(formView.question)}}
+                    {{ form_help(formView.question)}}
+                </div>
+            </div>
         </div>
+        <div class="rowR">
+            <div class="fieldContainer">
+                <div class="field ">
+                    {{ form_label(formView.additionnalInformations)}}
+                    {{ form_errors(formView.additionnalInformations)}}
+                </div>
+                <div class="field bigInput">
+                    {{ form_widget(formView.additionnalInformations)}}
+                    {{ form_help(formView.additionnalInformations)}}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"> Envoyer votre requête</i>
+        </button>
+        {{ form_end(formView)}}
     </div>
-    <div class="col">
-        <div>
-            
-            {{ form_label(formView.question)}}
-            {{ form_errors(formView.question)}}
-            {{ form_widget(formView.question)}}
-            {{ form_help(formView.question)}}
-        </div>
-        <div>
-            {{ form_label(formView.additionnalInformations)}}
-            {{ form_errors(formView.additionnalInformations)}}
-            {{ form_widget(formView.additionnalInformations)}}
-            {{ form_help(formView.additionnalInformations)}}
-        </div>
-    </div>
-</div>
-    <button type="submit" class="btn btn-primary">
-        <i class="fas fa-save"> Envoyer votre requête</i>
-    </button>
-    {{ form_end(formView)}}
+    
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="/js/createJson.js"></script>
+
 {% endblock %}

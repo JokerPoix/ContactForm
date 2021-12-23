@@ -9,3 +9,48 @@
 body{
     height: 100vh;
 }
+
+.formRequest {
+    display: flex;
+    margin-top: 2%; 
+    flex-direction: column;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.rowR {
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    
+}
+input {
+    width:100%
+}
+.field{
+    width:100%; 
+    
+}
+.fieldContainer{
+    width:100%;
+}
+
+.halfFieldContainer{
+    flex : 1;
+}
+
+.halfField{
+    width:100%; 
+
+    
+}
+
+button{
+    width: 100%;
+}
+
+.bigInput>textarea {
+    width: 100%;
+    height: 10rem;
+}

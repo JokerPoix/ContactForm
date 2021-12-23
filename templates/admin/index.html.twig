@@ -10,7 +10,8 @@
         <ul>
           <div class="info">{{ i.applicant.mail }}</div>
           <div class="info">{{ i.title }}</div>
-          <div class="answered">{% if i.answered == true %} Répondu {% else %} Non répondu {% endif %}</div>
+          <div class="info">{% if i.answered == true %} Répondu {% else %} Non répondu {% endif %}</div>                    
+          <div class="info">{% if i.updatedAt == null %} {{ i.createdAt|date("m/d/Y") }} {% else %} {{ i.updatedAt|date("m/d/Y") }} {% endif %}</div>
           <div class="request_link"><a class="arrow" href="{{ path ('admin_answering', {'id': i.id }) }}">Répondre</a></div>
         </ul>
       </div>

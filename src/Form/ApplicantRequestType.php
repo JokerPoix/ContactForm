@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 class ApplicantRequestType extends AbstractType
 {
@@ -20,8 +22,12 @@ class ApplicantRequestType extends AbstractType
                 'label' => "Nom",
             ])
             ->add('applicant', ApplicantType::class)
-            ->add('question')
-            ->add('additionnalInformations');
+            ->add('question' , TextareaType::class ,[
+                'attr' => ['class' => 'tinymce'],
+            ])
+            ->add('additionnalInformations' , TextareaType::class,[
+                'attr' => ['class' => 'tinymce'],
+            ]);;
             
         ;
     }

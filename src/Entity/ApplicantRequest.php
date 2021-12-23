@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\ApplicantRequestRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -12,47 +13,56 @@ class ApplicantRequest
 {
     /**
      * @ORM\Id
+     * @Groups("applicantRequest")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
+     * @Groups("applicant")
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
+     * @Groups("applicant")
      * @ORM\Column(type="string", length=1000)
      */
     private $question;
 
     /**
+     * @Groups("applicant")
      * @ORM\Column(type="boolean")
      */
     private $answered;
 
     /**
+     * @Groups("applicant")
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $additionnalInformations;
 
     /**
+     * @Groups("applicant")
      * @ORM\ManyToOne(targetEntity=Applicant::class, inversedBy="applicantRequest",cascade={"persist"})
      */
     private $applicant;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @Groups("applicant")
+     * @ORM\Column(type="datetime_immutable")
      */
     private $created_at;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @Groups("applicant")
+     * @ORM\Column(type="datetime_immutable", nullable=true)
      */
     private $updated_at;
 
     /**
+     * @Groups("applicant")
      * @ORM\Column(type="string", length=255)
      */
     private $title;

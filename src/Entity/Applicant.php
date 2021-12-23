@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\ApplicantRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -14,22 +15,26 @@ class Applicant
 {
     /**
      * @ORM\Id
+     * @Groups("applicant")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
+     * @Groups("applicant")
      * @ORM\Column(type="string", length=255)
      */
     private $mail;
 
     /**
-     * @ORM\OneToMany(targetEntity=ApplicantRequest::class, mappedBy="applicant")
+    * @Groups("applicantRequest_details")
+    * @ORM\OneToMany(targetEntity=ApplicantRequest::class, mappedBy="applicant")
      */
     private $applicantRequest;
 
     /**
+     * @Groups("applicant") 
      * @ORM\Column(type="integer", nullable=true)
      */
     private $nonAnswered;
