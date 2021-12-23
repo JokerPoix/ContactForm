@@ -1,0 +1,36 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+ {{ parent() }}
+        <div >
+            <div class="box">
+                <div class="info_request">
+                    {{ request.applicant.mail }}
+                </div>
+            </div>
+            <div class="box">                            
+                <div class="info_request">
+                    {{ request.name }}
+                </div>
+            </div>
+            <div class="box">                            
+                <div class="info_request">
+                    {{ request.question }}
+                </div>
+            </div>
+            <div class="box">                            
+                <div class="info_request">
+                    {{ request.additionnalInformations }}
+                </div>
+            </div>
+            {# <div>{% if request.updatedAt == null %}{{ request.createdAt }} {% else %}{{request.updatedAt}} {% endif %}</div> #}
+            <div class="box">
+                {% if request.answered == 1 %}
+                <button class="info_answer_button"><a class="info_answer_button arrow" style="width:100%; height:100%;" href="{{ path ('admin_unanswered', {'id': request.id }) }}">Passer à "non répondu"</a></button> 
+                {% else %}
+                <button class="info_answer_button"><a class="info_answer_button arrow" style="width:100%; height:100%;" href="{{ path ('admin_answered', {'id': request.id }) }}">Passer à "répondu"</a></button>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}

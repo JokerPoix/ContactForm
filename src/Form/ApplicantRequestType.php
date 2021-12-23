@@ -13,6 +13,9 @@ class ApplicantRequestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('title', TextType::class, [
+                'label' => "Raison de la demande",
+            ])
             ->add('name', TextType::class, [
                 'label' => "Nom",
             ])

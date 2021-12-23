@@ -1,0 +1,20 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+ {{ parent() }}
+	{% for i in applicants | sort((a, b) => a.nonAnswered <=> b.nonAnswered) |reverse %}
+      <div class="box">
+        <ul>
+          <div class="info" style="width:40%">{{ i.mail }}</div>
+          <div class="info" style="width:40%">Non répondu: {{ i.nonAnswered }}</div>
+          <div class="request_link"><a class="arrow" href=" {{ path ('admin_user_requests', {'id': i.id }) }}">Voir</a></div>
+        </ul>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

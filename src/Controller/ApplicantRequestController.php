@@ -34,7 +34,9 @@ class ApplicantRequestController extends AbstractController
             }
             else{
             $applicant = $applicantRepository->findOneBy(['mail' => $applicantMail]);
+            $applicant = $applicant->setNonAnswered($applicant->getNonAnswered()+1) ;
             $applicantRequest->setApplicant($applicant);
+            $em->persist($applicant);
             $em->persist($applicantRequest);
             $em->flush();
             }

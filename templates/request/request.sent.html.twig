@@ -1,21 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseUser.html.twig' %}
 {% block title %}Requête envoyée{% endblock %}
 {% block stylesheets %}<link rel="stylesheet" href="/css/requestSent.css">{% endblock %}
 
 {% block body %}
-<div class="coffee">
-    <div class="coffee__saucer">
-        <div class="coffee__saucer__shadow"></div>
-        <div class="coffee__mug">
-            <div class="coffee__mug__drink"></div>
+    {{parent()}}
+    <div class="coffee">
+    
+        <div class="coffee__saucer">
+            <div class="coffee__saucer__shadow"></div>
+            <div class="coffee__mug">
+                <div class="coffee__mug__drink"></div>
+            </div>
+        </div>
+        <div class="coffee__mug__handle"></div>
+        <div class="shadow"></div>
+        <div class="text">
+            <p class="first">REQUEST</p>
+            <p class="second">Sent</p>
+            <p class="third">Boss</p>
         </div>
     </div>
-    <div class="coffee__mug__handle"></div>
-    <div class="shadow"></div>
-    <div class="text">
-        <p class="first">REQUEST</p>
-        <p class="second">Sent</p>
-        <p class="third">Boss</p>
-    </div>
-</div>
+
 {% endblock %}

@@ -1,13 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseUser.html.twig' %}
 
 {% block title %}Formulaire Requête{% endblock %}
 
 {% block body %}
-<style>
-    
-</style>
-
-<div class="example-wrapper">
+{{ parent()}}
+<div >
     <h1>Requête</h1>
 {# {{ form(formView)}} #}
     
@@ -15,6 +12,12 @@
     {{ form_start(formView)}}
     {{ form_errors(formView)}}
     <div class="col">
+        <div>
+            {{ form_label(formView.title)}}
+            {{ form_errors(formView.title)}}
+            {{ form_widget(formView.title)}}
+            {{ form_help(formView.title)}}
+        </div>
         <div>
             {{ form_label(formView.applicant.mail)}}
             {{ form_errors(formView.applicant.mail)}}
@@ -50,4 +53,6 @@
     {{ form_end(formView)}}
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/js/createJson.js"></script>
 {% endblock %}

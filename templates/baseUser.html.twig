@@ -7,6 +7,7 @@
 			<link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
 			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 			<link rel="stylesheet" href="/css/style.css">
+            
 		{% endblock %}
 
 
@@ -15,6 +16,19 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        <div style="width:100%">
+            <a href="{{ path ('app_login') }}" class="home-a">
+                <button class="home-btn btn btn-success"> 
+                    <h1>Connexion Admin</h1>
+                </button>
+            </a>
+            <a href="{{ path ('request') }}" class="home-a">
+                <button  class="home-btn btn btn-info">
+                    <h1> Requête </h1>
+                </button>
+            </a>
+        </div>
+        {% endblock %}
     </body>
 </html>

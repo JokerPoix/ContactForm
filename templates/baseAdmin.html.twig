@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+			<link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+			<link rel="stylesheet" href="/css/admin.css">
+		{% endblock %}
+
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}<div class="wrapper">
+  <input id="menu" type="checkbox" name="menu">
+  <label for="menu">Menu</label>
+  <div class="sidebar">
+    <div class="logo">
+      <img width="70" src="{{ asset('img/Admin.jpg') }}" alt="Symfony!">
+    </div>
+    <div class="menu">
+      <div class=""><a class="" href="{{ path ('admin') }}">Overview</a></div>
+      <div class=""><a class="" href="{{ path ('admin_users') }}">Utilisateurs</a></div>
+      <div class=""><a class="" href="{{ path ('request') }}">Formulaire</a></div>
+    </div>
+    <div class="bottom">
+      <a href="{{ path ('app_logout') }}">Déconnexion</a>
+    </div>
+  </div>
+  <div class="main">  
+    <div class="content">{% endblock %}
+    </body>
+</html>

@@ -29,9 +29,15 @@ class Applicant
      */
     private $applicantRequest;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $nonAnswered;
+
     public function __construct()
     {
         $this->applicantRequest = new ArrayCollection();
+        $this->nonAnswered = 1;
     }
 
     public function getId(): ?int
@@ -77,6 +83,18 @@ class Applicant
                 $applicantRequest->setApplicant(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNonAnswered(): ?int
+    {
+        return $this->nonAnswered;
+    }
+
+    public function setNonAnswered(?int $nonAnswered): self
+    {
+        $this->nonAnswered = $nonAnswered;
 
         return $this;
     }
